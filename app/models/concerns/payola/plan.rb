@@ -9,6 +9,7 @@ module Payola
       validates_presence_of :interval
       validates_presence_of :stripe_id
       validates_presence_of :name
+      validates_presence_of :stripe_product_id
 
       validates_uniqueness_of :stripe_id
 
