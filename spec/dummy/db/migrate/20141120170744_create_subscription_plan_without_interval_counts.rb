@@ -1,4 +1,4 @@
-class CreateSubscriptionPlanWithoutIntervalCounts < ActiveRecord::Migration
+class CreateSubscriptionPlanWithoutIntervalCounts < ActiveRecord::Migration[5.0]
   def change
     create_table :subscription_plan_without_interval_counts do |t|
       t.string :name
