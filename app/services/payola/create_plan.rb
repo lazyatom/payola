@@ -13,7 +13,7 @@ module Payola
         id:                plan.stripe_id,
         amount:            plan.amount,
         interval:          plan.interval,
-        name:              plan.name,
+        nickname:          plan.name,
         product:           plan.stripe_product_id,
         interval_count:    plan.respond_to?(:interval_count) ? plan.interval_count : nil,
         currency:          plan.respond_to?(:currency) ? plan.currency : Payola.default_currency,
