@@ -8,13 +8,15 @@ module Payola
     end
 
     describe "validations" do
+      let(:product) { create(:product) }
+
       it "should validate" do
-        sale = build(:sale)
+        sale = build(:sale, product: product)
         expect(sale.valid?).to be true
       end
 
       it "should validate lack of email" do
-        sale = build(:sale, email: nil)
+        sale = build(:sale, product: product, email: nil)
         expect(sale.valid?).to be false
       end
       it "should validate product" do
@@ -22,7 +24,7 @@ module Payola
         expect(sale.valid?).to be false
       end
       it "should validate stripe_token" do
-        sale = build(:sale, stripe_token: nil)
+        sale = build(:sale, product: product, stripe_token: nil)
         expect(sale.valid?).to be false
       end
     end
